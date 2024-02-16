@@ -71,11 +71,11 @@
         <h2>SMTP Email Test Form</h2>
         <div>
             <label for="smtp_host">SMTP Host:</label>
-            <input type="text" id="smtp_host" name="smtp_host" required>
+            <input type="text" id="smtp_host" name="smtp_host" required value="<?php echo isset($_POST['smtp_host']) ? $_POST['smtp_host'] : ''; ?>">
         </div>
         <div>
             <label for="smtp_username">SMTP Username:</label>
-            <input type="text" id="smtp_username" name="smtp_username" required>
+            <input type="text" id="smtp_username" name="smtp_username" required value="<?php echo isset($_POST['smtp_username']) ? $_POST['smtp_username'] : ''; ?>">
         </div>
         <div>
             <label for="smtp_password">SMTP Password:</label>
@@ -83,29 +83,32 @@
         </div>
         <div>
             <label for="smtp_port">SMTP Port:</label>
-            <input type="text" id="smtp_port" name="smtp_port" required>
+            <input type="text" id="smtp_port" name="smtp_port" required value="<?php echo isset($_POST['smtp_port']) ? $_POST['smtp_port'] : ''; ?>">
         </div>
         <div>
             <label for="from_email">From Email:</label>
-            <input type="email" id="from_email" name="from_email" required>
+            <input type="email" id="from_email" name="from_email" required value="<?php echo isset($_POST['from_email']) ? $_POST['from_email'] : ''; ?>">
         </div>
         <div>
             <label for="to_email">To Email:</label>
-            <input type="email" id="to_email" name="to_email" required>
+            <input type="email" id="to_email" name="to_email" required value="<?php echo isset($_POST['to_email']) ? $_POST['to_email'] : ''; ?>">
         </div>
         <div>
             <label for="email_subject">Email Subject:</label>
-            <input type="text" id="email_subject" name="email_subject" required>
+            <input type="text" id="email_subject" name="email_subject" required value="<?php echo isset($_POST['email_subject']) ? $_POST['email_subject'] : ''; ?>">
         </div>
         <div>
             <label for="email_body">Email Body:</label>
-            <textarea id="email_body" name="email_body" required></textarea>
+            <textarea id="email_body" name="email_body" required>
+            <?php echo isset($_POST['email_body']) ? $_POST['email_body'] : ''; ?>
+
+            </textarea>
         </div>
         <div>
             <label for="encryption">Encryption:</label>
             <select id="encryption" name="encryption">
-                <option value="tls">TLS</option>
-                <option value="ssl">SSL</option>
+                <option value="tls" <?php echo isset($_POST['encryption']) && $_POST['encryption'] === 'tls' ? 'selected' : ''; ?>>TLS</option>
+                <option value="ssl" <?php echo isset($_POST['encryption']) && $_POST['encryption'] === 'ssl' ? 'selected' : ''; ?>>SSL</option>
             </select>
         </div>
         <button type="submit">Send Email</button>
