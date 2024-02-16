@@ -159,7 +159,10 @@
             <p style="color: red; text-align: center;"><?php echo $mail->ErrorInfo; ?></p>
 
         <?php
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            // show debug output
+            echo '<pre>';
+            var_dump($mail);
+            echo '</pre>';
         }
 
 
