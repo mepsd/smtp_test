@@ -1,0 +1,14 @@
+{
+    "name": "mepsd/smtp_test",
+    "description": "SMTP Tester",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "authors": [
+        {
+            "name": "Paras Suthar Darji",
+            "email": "parassuthardarji@gmail.com"
+        }
+    ]
+}
