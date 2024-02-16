@@ -161,7 +161,9 @@
         <?php
             // show debug output
             echo '<pre>';
-            var_dump($mail);
+            foreach ($mail->getSMTPInstance()->getLog() as $key => $value) {
+                echo $value;
+            }
             echo '</pre>';
         }
 
