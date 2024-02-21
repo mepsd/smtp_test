@@ -130,7 +130,8 @@
 
         try {
             // Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_OFF; // Change to DEBUG_SERVER for detailed debug output
+
+            $mail->SMTPDebug = SMTP::DEBUG_CONNECTION; // Change to DEBUG_SERVER for detailed debug output
             $mail->isSMTP();
             $mail->Host       = $_POST['smtp_host'];
             $mail->SMTPAuth   = true;
@@ -157,7 +158,6 @@
         } catch (Exception $e) {
         ?>
             <p style="color: red; text-align: center;"><?php echo $mail->ErrorInfo; ?></p>
-
         <?php
             // show debug output
             echo '<pre>';
